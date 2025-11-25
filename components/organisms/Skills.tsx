@@ -99,7 +99,7 @@ export function Skills() {
           {/* Terminal Stats */}
           <div className="mt-16">
             <div className="bg-black border border-green-500/30 rounded-lg p-6 font-mono text-sm">
-              <div className="text-green-400 mb-4">$ tech-stats --{activeTab}</div>
+              <div className="text-green-400 mb-4">$ whois phutran1210.dev && dig +short phutran1210.dev</div>
               <div className="space-y-2 text-gray-300">
                 {activeTab === "frontend" && (
                   <>
@@ -120,48 +120,48 @@ export function Skills() {
                 {activeTab === "backend" && (
                   <>
                     <div className="flex justify-between">
-                      <span>APIs Developed:</span>
-                      <span className="text-green-400">50+</span>
+                      <span>$ sqlmap -u &quot;target.com&quot; --dbs:</span>
+                      <span className="text-green-400">50+ APIs</span>
                     </div>
                     <div className="flex justify-between">
-                      <span>Database Designs:</span>
-                      <span className="text-green-400">30+</span>
+                      <span>$ enum4linux -a target.com:</span>
+                      <span className="text-green-400">30+ DBs</span>
                     </div>
                     <div className="flex justify-between">
-                      <span>Server Deployments:</span>
-                      <span className="text-green-400">40+</span>
+                      <span>$ nmap -sS -O target.com:</span>
+                      <span className="text-green-400">40+ Servers</span>
                     </div>
                   </>
                 )}
                 {activeTab === "ceh" && (
                   <>
                     <div className="flex justify-between">
-                      <span>Vulnerabilities Found:</span>
-                      <span className="text-green-400">150+</span>
+                      <span>$ nikto -h target.com -output vulns.txt:</span>
+                      <span className="text-green-400">150+ Vulns</span>
                     </div>
                     <div className="flex justify-between">
-                      <span>Penetration Tests:</span>
-                      <span className="text-green-400">75+</span>
+                      <span>$ msfconsole -q -x &quot;use exploit/multi&quot;:</span>
+                      <span className="text-green-400">75+ Tests</span>
                     </div>
                     <div className="flex justify-between">
-                      <span>Security Audits:</span>
-                      <span className="text-green-400">25+</span>
+                      <span>$ burpsuite --target=&quot;*.target.com&quot;:</span>
+                      <span className="text-green-400">25+ Audits</span>
                     </div>
                   </>
                 )}
                 {activeTab === "devops" && (
                   <>
                     <div className="flex justify-between">
-                      <span>CI/CD Pipelines:</span>
-                      <span className="text-green-400">30+</span>
+                      <span>$ docker ps -a | grep &quot;target&quot;:</span>
+                      <span className="text-green-400">30+ Pipelines</span>
                     </div>
                     <div className="flex justify-between">
-                      <span>Docker Images:</span>
-                      <span className="text-green-400">50+</span>
+                      <span>$ kubectl get pods --all-namespaces:</span>
+                      <span className="text-green-400">50+ Images</span>
                     </div>
                     <div className="flex justify-between">
-                      <span>Cloud Deployments:</span>
-                      <span className="text-green-400">40+</span>
+                      <span>$ aws ec2 describe-instances:</span>
+                      <span className="text-green-400">40+ Deployments</span>
                     </div>
                   </>
                 )}

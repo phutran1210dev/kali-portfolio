@@ -49,7 +49,7 @@ export function Contact() {
           {/* Section Header */}
           <div className="text-center space-y-4 animate-on-scroll">
             <Typography variant="code" className="text-green-400">
-              $ nc -l 1337
+              $ gobuster dir -u target.com -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt
             </Typography>
             <Typography variant="h2" className="font-mono text-white">
               Get In Touch

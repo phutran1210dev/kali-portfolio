@@ -21,6 +21,7 @@ interface ProjectCardProps {
   progress?: number;
   variant?: "default" | "hacker" | "matrix";
   className?: string;
+  riskLevel?: "LOW" | "MEDIUM" | "HIGH" | "CRITICAL";
 }
 
 export function ProjectCard({
@@ -33,6 +34,7 @@ export function ProjectCard({
   progress = 100,
   variant = "hacker",
   className,
+  riskLevel,
 }: ProjectCardProps) {
   const maxVisibleTechs = 4;
   const visibleTechs = technologies.slice(0, maxVisibleTechs);
@@ -171,6 +173,40 @@ export function ProjectCard({
         )} />
       </div>
       
+      {/* CEH Warning Ribbon */}
+      {riskLevel && (
+        <div className={cn(
+          "relative overflow-hidden border-y font-mono text-xs font-bold",
+          riskLevel === "LOW" && "bg-green-900/30 border-green-500/30 text-green-300",
+          riskLevel === "MEDIUM" && "bg-yellow-900/30 border-yellow-500/30 text-yellow-300",
+          riskLevel === "HIGH" && "bg-orange-900/30 border-orange-500/30 text-orange-300",
+          riskLevel === "CRITICAL" && "bg-red-900/30 border-red-500/30 text-red-300"
+        )}>
+          <div className="px-4 py-2 flex items-center justify-between">
+            <div className="flex items-center space-x-2">
+              <div className={cn(
+                "w-2 h-2 rounded-full animate-pulse",
+                riskLevel === "LOW" && "bg-green-400",
+                riskLevel === "MEDIUM" && "bg-yellow-400",
+                riskLevel === "HIGH" && "bg-orange-400",
+                riskLevel === "CRITICAL" && "bg-red-400"
+              )} />
+              <span>⚠️ CEH PROJECT - RISK LEVEL: {riskLevel}</span>
+            </div>
+            <span className="text-xs opacity-75">AUTHORIZED USE ONLY</span>
+          </div>
+          {(riskLevel === "HIGH" || riskLevel === "CRITICAL") && (
+            <div className={cn(
+              "px-4 py-1 text-xs border-t",
+              riskLevel === "HIGH" && "bg-orange-800/20 border-orange-500/20 text-orange-200",
+              riskLevel === "CRITICAL" && "bg-red-800/20 border-red-500/20 text-red-200"
+            )}>
+              🔒 Source code and demos restricted due to security implications
+            </div>
+          )}
+        </div>
+      )}
+      
       <div className="p-6 space-y-4 flex flex-col grow">
         <Typography variant="h3" className="font-mono group-hover:text-primary transition-colors">
           {title}
@@ -262,7 +298,8 @@ export function ProjectCard({
         </div>
         
         <div className="flex flex-wrap gap-2 pt-2">
-          {githubUrl ? (
+          {/* Code Button */}
+          {githubUrl && (!riskLevel || (riskLevel !== "HIGH" && riskLevel !== "CRITICAL")) ? (
             <a href={githubUrl} target="_blank" rel="noopener noreferrer">
               <Button
                 variant={variant === "default" ? "outline" : variant}
@@ -277,14 +314,20 @@ export function ProjectCard({
               variant="outline"
               size="sm"
               disabled
-              className="opacity-50 cursor-not-allowed bg-gray-800/50 border-gray-600 text-gray-500"
+              className={cn(
+                "opacity-50 cursor-not-allowed bg-gray-800/50 border-gray-600 text-gray-500",
+                riskLevel === "HIGH" && "border-orange-600/50 text-orange-500/50",
+                riskLevel === "CRITICAL" && "border-red-600/50 text-red-500/50"
+              )}
+              title={riskLevel === "HIGH" || riskLevel === "CRITICAL" ? "Source code restricted for security reasons" : "Source code not available"}
             >
               <Icon icon={Github} className="h-4 w-4 mr-2" />
-              Code
+              {riskLevel === "HIGH" || riskLevel === "CRITICAL" ? "Private" : "Code"}
             </Button>
           )}
           
-          {liveUrl ? (
+          {/* Live Demo Button */}
+          {liveUrl && (!riskLevel || (riskLevel !== "HIGH" && riskLevel !== "CRITICAL")) ? (
             <a href={liveUrl} target="_blank" rel="noopener noreferrer">
               <Button
                 variant={variant === "default" ? "default" : variant}
@@ -299,14 +342,20 @@ export function ProjectCard({
               variant="outline"
               size="sm"
               disabled
-              className="opacity-50 cursor-not-allowed bg-gray-800/50 border-gray-600 text-gray-500"
+              className={cn(
+                "opacity-50 cursor-not-allowed bg-gray-800/50 border-gray-600 text-gray-500",
+                riskLevel === "HIGH" && "border-orange-600/50 text-orange-500/50",
+                riskLevel === "CRITICAL" && "border-red-600/50 text-red-500/50"
+              )}
+              title={riskLevel === "HIGH" || riskLevel === "CRITICAL" ? "Live demo restricted for security reasons" : "Live demo not available"}
             >
               <Icon icon={ExternalLink} className="h-4 w-4 mr-2" />
-              Live Demo
+              {riskLevel === "HIGH" || riskLevel === "CRITICAL" ? "Restricted" : "Live Demo"}
             </Button>
           )}
           
-          {productionUrl ? (
+          {/* Production Button */}
+          {productionUrl && (!riskLevel || (riskLevel !== "HIGH" && riskLevel !== "CRITICAL")) ? (
             <a href={productionUrl} target="_blank" rel="noopener noreferrer">
               <Button
                 variant={variant === "default" ? "default" : variant}
@@ -326,10 +375,15 @@ export function ProjectCard({
               variant="outline"
               size="sm"
               disabled
-              className="opacity-50 cursor-not-allowed bg-gray-800/50 border-gray-600 text-gray-500"
+              className={cn(
+                "opacity-50 cursor-not-allowed bg-gray-800/50 border-gray-600 text-gray-500",
+                riskLevel === "HIGH" && "border-orange-600/50 text-orange-500/50",
+                riskLevel === "CRITICAL" && "border-red-600/50 text-red-500/50"
+              )}
+              title={riskLevel === "HIGH" || riskLevel === "CRITICAL" ? "Production access restricted for security reasons" : "Production not available"}
             >
               <Icon icon={ExternalLink} className="h-4 w-4 mr-2" />
-              Production
+              {riskLevel === "HIGH" || riskLevel === "CRITICAL" ? "Classified" : "Production"}
             </Button>
           )}
         </div>

@@ -95,13 +95,13 @@ export function Projects() {
           {/* Terminal Output */}
           <div className="mt-16">
             <div className="bg-black border border-green-500/30 rounded-lg p-6 font-mono text-sm">
-              <div className="text-green-400 mb-4">$ git log --oneline --graph | head -5</div>
-              <div className="space-y-1 text-gray-300">
-                <div>* <span className="text-yellow-400">a8b3c2d</span> feat: Added automated exploit generation</div>
-                <div>* <span className="text-yellow-400">f7e6d5c</span> fix: Improved SQLi detection accuracy</div>
-                <div>* <span className="text-yellow-400">b9a8c7f</span> feat: Multi-threaded network scanning</div>
-                <div>* <span className="text-yellow-400">e4d3c2b</span> docs: Updated API documentation</div>
-                <div>* <span className="text-yellow-400">c8b7a6e</span> feat: Added mobile app static analysis</div>
+              <div className="text-green-400 mb-4">$ nmap -sV --script vuln target.com | grep -E "VULNERABLE|CVE"</div>
+              <div className="space-y-1 text-gray-300 text-sm">
+                <div>* <span className="text-red-400">CVE-2023-4911</span> CRITICAL: Buffer overflow in glibc</div>
+                <div>* <span className="text-yellow-400">CVE-2023-22515</span> HIGH: Authentication bypass in Confluence</div>
+                <div>* <span className="text-orange-400">CVE-2023-36884</span> MEDIUM: RCE via crafted document files</div>
+                <div>* <span className="text-blue-400">CVE-2023-38545</span> INFO: SOCKS5 heap buffer overflow</div>
+                <div>* <span className="text-green-400">OWASP-A01</span> Injection vulnerabilities detected</div>
               </div>
             </div>
           </div>

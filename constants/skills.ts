@@ -84,13 +84,13 @@ export const skillTabs: SkillTabs = {
       title: "Cloud & Infrastructure",
       description: "Modern cloud and deployment platforms",
       icon: Cloud,
-      skills: ["Docker", "Kubernetes", "AWS", "Vercel", "Railway", "Cloudflare"],
+      skills: ["Docker", "Kubernetes", "AWS", "Cloudflare"],
     },
     {
       title: "CI/CD & Tools",
       description: "Modern development and deployment workflows",
       icon: GitBranch,
-      skills: ["GitHub Actions", "Turborepo", "Bun", "pnpm", "Biome", "Nx"],
+      skills: ["GitHub Actions", "Turborepo", "Bun", "pnpm"],
     },
   ],
 };
