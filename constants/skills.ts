@@ -1,0 +1,105 @@
+import {
+  Shield,
+  Globe,
+  Database,
+  Terminal,
+  Code,
+  Server,
+  Cloud,
+  GitBranch,
+} from "lucide-react";
+import type { LucideIcon } from "lucide-react";
+
+export interface SkillCategory {
+  title: string;
+  description: string;
+  icon: LucideIcon;
+  skills: string[];
+}
+
+export interface SkillTab {
+  key: "frontend" | "backend" | "ceh" | "devops";
+  label: string;
+  color: string;
+}
+
+export interface SkillTabs {
+  frontend: SkillCategory[];
+  backend: SkillCategory[];
+  ceh: SkillCategory[];
+  devops: SkillCategory[];
+}
+
+export const skillTabs: SkillTabs = {
+  frontend: [
+    {
+      title: "React Ecosystem",
+      description: "React and React-based frameworks",
+      icon: Code,
+      skills: ["React 19", "Next.js 15", "React Native", "TypeScript", "JavaScript"],
+    },
+    {
+      title: "Styling & UI",
+      description: "Design and user interface technologies",
+      icon: Globe,
+      skills: ["Tailwind CSS v4", "Shadcn/ui", "Radix UI", "Framer Motion", "Three.js", "GSAP", "Animejs"],
+    },
+    {
+      title: "Build Tools & Package Managers",
+      description: "Development tools and package management",
+      icon: Terminal,
+      skills: ["Vite", "Webpack", "Bun", "pnpm", "yarn", "npm"],
+    },
+  ],
+  backend: [
+    {
+      title: "Backend Technologies",
+      description: "Server-side languages and frameworks",
+      icon: Server,
+      skills: ["Node.js", "Express", "NestJS", "Python", "Golang"],
+    },
+    {
+      title: "Databases & APIs",
+      description: "Data storage and API development",
+      icon: Database,
+      skills: ["Drizzle ORM", "Prisma", "Supabase", "PostgreSQL", "Redis", "GraphQL"],
+    },
+  ],
+  ceh: [
+    {
+      title: "Web Security",
+      description: "Modern web application security testing",
+      icon: Shield,
+      skills: ["OWASP Top 10 2023", "JWT Attacks", "GraphQL Security", "API Security", "SSTI", "Race Conditions"],
+    },
+    {
+      title: "AI & Cloud Security",
+      description: "Emerging security domains",
+      icon: Terminal,
+      skills: ["AI/ML Security", "Container Security", "Cloud Pentesting", "Serverless Security", "Supply Chain", "Zero Trust"],
+    },
+  ],
+  devops: [
+    {
+      title: "Cloud & Infrastructure",
+      description: "Modern cloud and deployment platforms",
+      icon: Cloud,
+      skills: ["Docker", "Kubernetes", "AWS", "Vercel", "Railway", "Cloudflare"],
+    },
+    {
+      title: "CI/CD & Tools",
+      description: "Modern development and deployment workflows",
+      icon: GitBranch,
+      skills: ["GitHub Actions", "Turborepo", "Bun", "pnpm", "Biome", "Nx"],
+    },
+  ],
+};
+
+export const tabs: SkillTab[] = [
+  { key: "frontend", label: "Frontend", color: "text-blue-400" },
+  { key: "backend", label: "Backend", color: "text-yellow-400" },
+  { key: "ceh", label: "CEH", color: "text-green-400" },
+  { key: "devops", label: "DevOps", color: "text-purple-400" },
+];
+
+export type SkillTabKey = keyof SkillTabs;

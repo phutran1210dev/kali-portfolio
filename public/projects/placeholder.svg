@@ -1,0 +1,10 @@
+<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="400" height="300" fill="#0A0A0A"/>
+<rect x="1" y="1" width="398" height="298" stroke="#00FF41" stroke-width="2" fill="none"/>
+<text x="200" y="140" text-anchor="middle" fill="#00FF41" font-family="monospace" font-size="16">Security Project</text>
+<text x="200" y="165" text-anchor="middle" fill="#00FF41" font-family="monospace" font-size="12">Screenshot</text>
+<circle cx="50" cy="50" r="20" stroke="#00FF41" stroke-width="2" fill="none"/>
+<circle cx="350" cy="50" r="20" stroke="#00FF41" stroke-width="2" fill="none"/>
+<circle cx="50" cy="250" r="20" stroke="#00FF41" stroke-width="2" fill="none"/>
+<circle cx="350" cy="250" r="20" stroke="#00FF41" stroke-width="2" fill="none"/>
+</svg>
