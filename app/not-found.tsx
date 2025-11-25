@@ -7,8 +7,7 @@ import Link from "next/link";
 export default function NotFound() {
   const terminalRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const currentPath = 'unknown-page';
-
+  const currentPath = "unknown-page";
 
 
   // Matrix rain background effect
@@ -29,7 +28,7 @@ export default function NotFound() {
 
     const matrix = "ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789@#$%^&*()";
     const matrixArray = matrix.split("");
-    const fontSize = 10;
+    const fontSize = 18;
     const columns = canvas.width / fontSize;
     const drops: number[] = [];
 
@@ -67,28 +66,26 @@ export default function NotFound() {
   // Terminal animation effect with warning style
   useEffect(() => {
     if (terminalRef.current) {
-      const lines = terminalRef.current.querySelectorAll('.terminal-line');
-      
-      // Animate terminal lines with slide in from left and shake effect
+      const lines = terminalRef.current.querySelectorAll(".terminal-line");
+
       animateElement(lines, {
         translateX: [-100, 0],
         opacity: [0, 1],
         rotateX: [-15, 0],
-        delay: (el, i) => i * 300,
-        duration: 600,
-        easing: 'easeOutBounce',
+        delay: (el, i) => i * 200,
+        duration: 400,
+        easing: "easeOutBounce",
       });
 
-      // Add warning shake effect after initial animation
       setTimeout(() => {
         if (terminalRef.current) {
           animateElement(terminalRef.current, {
-            translateX: [-5, 5, -3, 3, 0],
-            duration: 500,
-            easing: 'easeInOutQuad',
+            translateX: [-3, 3, -2, 2, 0],
+            duration: 300,
+            easing: "easeInOutQuad",
           });
         }
-      }, 2000);
+      }, 1500);
     }
   }, []);
 
@@ -99,7 +96,7 @@ export default function NotFound() {
         ref={canvasRef}
         className="absolute inset-0 w-full h-full opacity-20 pointer-events-none"
       />
-      
+
       {/* Content */}
       <div className="w-full max-w-4xl mx-auto p-4 relative z-10">
         {/* Kali Linux Terminal */}
@@ -117,7 +114,11 @@ export default function NotFound() {
           </div>
 
           {/* Terminal Content */}
-          <div ref={terminalRef} className="p-6 space-y-2 font-mono text-sm bg-black min-h-[400px]">
+          <div
+            ref={terminalRef}
+            className="p-6 space-y-2 font-mono text-sm bg-black min-h-[500px]"
+          >
+            {/* Static initial commands */}
             <div className="terminal-line flex items-center text-red-300">
               <span className="text-red-500">┌──(</span>
               <span className="font-bold text-red-400">root㉿kali</span>
@@ -125,119 +126,48 @@ export default function NotFound() {
               <span className="text-gray-200 font-semibold">~/portfolio</span>
               <span className="text-red-500">]</span>
             </div>
-            
-            <div className="terminal-line flex items-center text-red-300">
-              <span className="text-red-500">└─</span>
-              <span className="font-bold text-red-400">$ </span>
-              <span className="text-gray-200">ls -la</span>
-            </div>
-            
-            <div className="terminal-line text-gray-300">
-              total 12
-            </div>
-            
-            <div className="terminal-line text-blue-400">
-              drwxr-xr-x 3 root root 4096 Nov 26 2025 .
-            </div>
-            
-            <div className="terminal-line text-blue-400">
-              drwxr-xr-x 5 root root 4096 Nov 26 2025 ..
-            </div>
-            
-            <div className="terminal-line text-green-400">
-              -rw-r--r-- 1 root root  256 Nov 26 2025 index.html
-            </div>
-            
-            <div className="terminal-line text-green-300">
-              <span className="text-red-400">┌──(</span>
-              <span className="font-bold text-green-400">root㉿kali</span>
-              <span className="text-red-400">)-[</span>
-              <span className="text-gray-200 font-semibold">~/portfolio</span>
-              <span className="text-red-400">]</span>
-            </div>
-            
+
             <div className="terminal-line flex items-center text-red-300">
               <span className="text-red-500">└─</span>
               <span className="font-bold text-red-400">$ </span>
               <span className="text-gray-200">cat {currentPath}</span>
             </div>
-            
+
             <div className="terminal-line text-red-400 font-bold">
               cat: {currentPath}: No such file or directory
             </div>
-            
-            <div className="terminal-line text-green-300">
-              <span className="text-red-400">┌──(</span>
-              <span className="font-bold text-green-400">root㉿kali</span>
-              <span className="text-red-400">)-[</span>
-              <span className="text-gray-200 font-semibold">~/portfolio</span>
-              <span className="text-red-400">]</span>
+
+            <div className="terminal-line text-red-400 font-bold">
+              WARNING: Unauthorized access detected!
             </div>
-            
+
+            {/* Dynamic terminal output */}
+            <div className="terminal-line text-red-300">
+              <span className="text-red-500">┌──(</span>
+              <span className="font-bold text-red-400">root㉿kali</span>
+              <span className="text-red-500">)-[</span>
+              <span className="text-gray-200 font-semibold">~/portfolio</span>
+              <span className="text-red-500">]</span>
+            </div>
+
             <div className="terminal-line flex items-center text-red-300">
               <span className="text-red-500">└─</span>
               <span className="font-bold text-red-400">$ </span>
               <span className="text-gray-200">find . -name &quot;*{currentPath}*&quot;</span>
             </div>
-            
+
             <div className="terminal-line text-gray-500">
               {/* Empty result - no files found */}
             </div>
-            
-            <div className="terminal-line text-green-300">
-              <span className="text-red-400">┌──(</span>
-              <span className="font-bold text-green-400">root㉿kali</span>
-              <span className="text-red-400">)-[</span>
-              <span className="text-gray-200 font-semibold">~/portfolio</span>
-              <span className="text-red-400">]</span>
-            </div>
-            
-            <div className="terminal-line flex items-center text-red-300">
-              <span className="text-red-500">└─</span>
-              <span className="font-bold text-red-400">$ </span>
-              <span className="text-gray-200">echo &quot;Page not found - returning to main directory&quot;</span>
-            </div>
-            
-            <div className="terminal-line text-yellow-400">
-              Page not found - returning to main directory
-            </div>
-            
-            <div className="terminal-line text-red-300">
-              <span className="text-red-500">┌──(</span>
-              <span className="font-bold text-red-400">root㉿kali</span>
-              <span className="text-red-500">)-[</span>
-              <span className="text-gray-200 font-semibold">~/portfolio</span>
-              <span className="text-red-500">]</span>
-            </div>
-            
-            <div className="terminal-line flex items-center text-red-300">
-              <span className="text-red-500">└─</span>
-              <span className="font-bold text-red-400">$ </span>
-              <span className="text-gray-200">whoami</span>
-            </div>
-            
+
             <div className="terminal-line text-red-400 font-bold">
-              WARNING: Unauthorized access detected!
+              ERROR 404: Resource not found in security perimeter!
             </div>
-            
-            <div className="terminal-line text-red-300">
-              <span className="text-red-500">┌──(</span>
-              <span className="font-bold text-red-400">root㉿kali</span>
-              <span className="text-red-500">)-[</span>
-              <span className="text-gray-200 font-semibold">~/portfolio</span>
-              <span className="text-red-500">]</span>
-            </div>
-            
-            <div className="terminal-line flex items-center text-red-300">
-              <span className="text-red-500">└─</span>
-              <span className="font-bold text-red-400">$ </span>
-              <span className="text-gray-200">ls -la ../</span>
-            </div>
-            
+
             <div className="terminal-line text-orange-400">
               SECURITY ALERT: Redirecting to safe zone...
             </div>
-            
+
             <div className="terminal-line text-red-300">
               <span className="text-red-500">┌──(</span>
               <span className="font-bold text-red-400">root㉿kali</span>
@@ -245,13 +175,31 @@ export default function NotFound() {
               <span className="text-gray-200 font-semibold">~/portfolio</span>
               <span className="text-red-500">]</span>
             </div>
-            
+
+            <div className="terminal-line flex items-center text-red-300">
+              <span className="text-red-500">└─</span>
+              <span className="font-bold text-red-400">$ </span>
+              <span className="text-gray-200">echo &quot;Please return to authorized area&quot;</span>
+            </div>
+
+            <div className="terminal-line text-yellow-400">
+              Please return to authorized area
+            </div>
+
+            <div className="terminal-line text-red-300">
+              <span className="text-red-500">┌──(</span>
+              <span className="font-bold text-red-400">root㉿kali</span>
+              <span className="text-red-500">)-[</span>
+              <span className="text-gray-200 font-semibold">~/portfolio</span>
+              <span className="text-red-500">]</span>
+            </div>
+
             <div className="terminal-line flex items-center text-red-300">
               <span className="text-red-500">└─</span>
               <span className="font-bold text-red-400">$ </span>
               <span className="text-gray-200">cd ..</span>
             </div>
-            
+
             <div className="terminal-line text-red-300">
               <span className="text-red-500">┌──(</span>
               <span className="font-bold text-red-400">root㉿kali</span>
@@ -259,11 +207,14 @@ export default function NotFound() {
               <span className="text-gray-200 font-semibold">~</span>
               <span className="text-red-500">]</span>
             </div>
-            
+
             <div className="terminal-line flex items-center text-red-300">
               <span className="text-red-500">└─</span>
               <span className="font-bold text-red-400">$ </span>
-              <Link href="/" className="text-cyan-400 hover:text-cyan-300 underline font-bold animate-pulse">
+              <Link
+                href="/"
+                className="text-cyan-400 hover:text-cyan-300 underline font-bold animate-pulse"
+              >
                 cd /home/portfolio
               </Link>
             </div>
