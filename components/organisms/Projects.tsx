@@ -87,6 +87,7 @@ export function Projects() {
                   {...project}
                   variant={index % 3 === 0 ? "hacker" : index % 3 === 1 ? "matrix" : "hacker"}
                   className="w-full"
+                  isCEHProject={activeTab === "CEH"}
                 />
               </div>
             ))}
