@@ -84,7 +84,7 @@ export const skillTabs: SkillTabs = {
       title: "Cloud & Infrastructure",
       description: "Modern cloud and deployment platforms",
       icon: Cloud,
-      skills: ["Docker", "Kubernetes", "AWS", "Cloudflare"],
+      skills: ["Docker", "Kubernetes", "AWS (Certified Cloud Practitioner)", "Cloudflare"],
     },
     {
       title: "CI/CD & Tools",

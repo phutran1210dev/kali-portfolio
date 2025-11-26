@@ -191,9 +191,8 @@ export function ProjectCard({
                 riskLevel === "HIGH" && "bg-orange-400",
                 riskLevel === "CRITICAL" && "bg-red-400"
               )} />
-              <span>⚠️ CEH PROJECT - RISK LEVEL: {riskLevel}</span>
+              <span>⚠️ RISK LEVEL: {riskLevel}</span>
             </div>
-            <span className="text-xs opacity-75">AUTHORIZED USE ONLY</span>
           </div>
           {(riskLevel === "HIGH" || riskLevel === "CRITICAL") && (
             <div className={cn(

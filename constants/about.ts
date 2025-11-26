@@ -35,8 +35,8 @@ export const cehCertifications: string[] = [
 ];
 
 export const cloudCertifications: string[] = [
-  "AWS Cloud Services",
-  "AWS Associate",
+  "AWS Certified Cloud Practitioner",
+  "AWS Certified Solutions Architect - Associate",
 ];
 
 export const securityCertifications: string[] = [];
