@@ -13,35 +13,28 @@ interface ThemeContextType {
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
-  const [theme, setTheme] = useState<Theme>("system");
-  const [actualTheme, setActualTheme] = useState<"dark" | "light">("dark");
-
-  useEffect(() => {
-    const stored = localStorage.getItem("theme") as Theme;
-    if (stored) {
-      setTheme(stored);
+  const [theme, setTheme] = useState<Theme>(() => {
+    if (typeof window !== "undefined") {
+      const stored = localStorage.getItem("theme") as Theme;
+      return stored || "system";
     }
-  }, []);
+    return "system";
+  });
+
+  // Derive actualTheme instead of storing it as state
+  const actualTheme: "dark" | "light" = 
+    theme === "system"
+      ? (typeof window !== "undefined" && window.matchMedia("(prefers-color-scheme: dark)").matches
+          ? "dark"
+          : "light")
+      : theme;
 
   useEffect(() => {
     const root = window.document.documentElement;
     root.classList.remove("light", "dark");
-
-    if (theme === "system") {
-      const systemTheme = window.matchMedia("(prefers-color-scheme: dark)")
-        .matches
-        ? "dark"
-        : "light";
-      
-      root.classList.add(systemTheme);
-      setActualTheme(systemTheme);
-    } else {
-      root.classList.add(theme);
-      setActualTheme(theme);
-    }
-
+    root.classList.add(actualTheme);
     localStorage.setItem("theme", theme);
-  }, [theme]);
+  }, [theme, actualTheme]);
 
   return (
     <ThemeContext.Provider value={{ theme, setTheme, actualTheme }}>

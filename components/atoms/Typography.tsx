@@ -8,14 +8,15 @@ interface TypographyProps extends HTMLAttributes<HTMLElement> {
 
 const Typography = forwardRef<HTMLElement, TypographyProps>(
   ({ className, variant = "p", as, ...props }, ref) => {
-    const Component = as || getDefaultElement(variant);
+    const elementType = as || getDefaultElement(variant);
     
-    return (
-      <Component
-        ref={ref}
-        className={cn(getVariantClasses(variant), className)}
-        {...props}
-      />
+    return React.createElement(
+      elementType,
+      {
+        ref,
+        className: cn(getVariantClasses(variant), className),
+        ...props
+      }
     );
   }
 );

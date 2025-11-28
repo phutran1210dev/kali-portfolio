@@ -96,7 +96,7 @@ export function Projects() {
           {/* Terminal Output */}
           <div className="mt-16">
             <div className="bg-black border border-green-500/30 rounded-lg p-6 font-mono text-sm">
-              <div className="text-green-400 mb-4">$ nmap -sV --script vuln target.com | grep -E "VULNERABLE|CVE"</div>
+              <div className="text-green-400 mb-4">$ nmap -sV --script vuln target.com | grep -E &quot;VULNERABLE|CVE&quot;</div>
               <div className="space-y-1 text-gray-300 text-sm">
                 <div>* <span className="text-red-400">CVE-2023-4911</span> CRITICAL: Buffer overflow in glibc</div>
                 <div>* <span className="text-yellow-400">CVE-2023-22515</span> HIGH: Authentication bypass in Confluence</div>
