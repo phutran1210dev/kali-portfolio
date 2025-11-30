@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import { HTMLAttributes, forwardRef, ElementType } from "react";
+import { HTMLAttributes, forwardRef, ElementType, createElement } from "react";
 
 interface TypographyProps extends HTMLAttributes<HTMLElement> {
   variant?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p" | "blockquote" | "code" | "lead" | "large" | "small" | "muted";
@@ -10,7 +10,7 @@ const Typography = forwardRef<HTMLElement, TypographyProps>(
   ({ className, variant = "p", as, ...props }, ref) => {
     const elementType = as || getDefaultElement(variant);
     
-    return React.createElement(
+    return createElement(
       elementType,
       {
         ref,
