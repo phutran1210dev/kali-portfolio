@@ -13,7 +13,7 @@ import { useFormStatus } from "react-dom";
 import { submitContactForm } from "@/lib/actions/contact";
 
 interface ContactFormProps {
-  variant?: "default" | "hacker" | "matrix";
+  variant?: "default" | "cosmic" | "nebula";
   className?: string;
 }
 
@@ -61,8 +61,8 @@ export function ContactForm({ variant = "hacker", className }: ContactFormProps)
   if (state.success) {
     return (
       <Card variant={variant} className={cn("text-center py-12", className)}>
-        <Icon icon={CheckCircle} className="h-12 w-12 mx-auto mb-4 text-green-400" />
-        <Typography variant="h3" className="text-green-400 mb-2">
+        <Icon icon={CheckCircle} className="h-12 w-12 mx-auto mb-4 text-purple-400" />
+        <Typography variant="h3" className="text-purple-400 mb-2">
           Message Sent Successfully!
         </Typography>
         <Typography variant="small" className="opacity-70">
@@ -90,13 +90,13 @@ export function ContactForm({ variant = "hacker", className }: ContactFormProps)
         
         <div className="space-y-4">
           <div>
-            <label className="block text-sm font-mono text-green-400 mb-2">
+            <label className="block text-sm font-mono text-purple-400 mb-2">
               name:
             </label>
             <Input
               type="text"
               name="name"
-              variant={variant === "default" ? "default" : "hacker"}
+              variant={variant === "default" ? "default" : "cosmic"}
               placeholder="your_name"
               required
             />
@@ -108,13 +108,13 @@ export function ContactForm({ variant = "hacker", className }: ContactFormProps)
           </div>
           
           <div>
-            <label className="block text-sm font-mono text-green-400 mb-2">
+            <label className="block text-sm font-mono text-purple-400 mb-2">
               email:
             </label>
             <Input
               type="email"
               name="email"
-              variant={variant === "default" ? "default" : "hacker"}
+              variant={variant === "default" ? "default" : "cosmic"}
               placeholder="your.email@domain.com"
               required
             />
@@ -126,7 +126,7 @@ export function ContactForm({ variant = "hacker", className }: ContactFormProps)
           </div>
           
           <div>
-            <label className="block text-sm font-mono text-green-400 mb-2">
+            <label className="block text-sm font-mono text-purple-400 mb-2">
               message:
             </label>
             <textarea
@@ -134,8 +134,8 @@ export function ContactForm({ variant = "hacker", className }: ContactFormProps)
               rows={4}
               className={cn(
                 "flex w-full rounded-md border px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 font-mono transition-all resize-none",
-                variant === "hacker"
-                  ? "border-green-500/50 bg-black/50 text-green-400 placeholder:text-green-400/50 focus:border-green-400 focus:ring-green-400/20"
+                variant === "cosmic"
+                  ? "border-purple-500/50 bg-black/50 text-purple-400 placeholder:text-purple-400/50 focus:border-purple-400 focus:ring-purple-400/20"
                   : "border-input bg-background",
                 state.errors?.message && "border-red-500/50"
               )}

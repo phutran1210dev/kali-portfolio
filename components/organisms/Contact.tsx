@@ -48,31 +48,31 @@ export function Contact() {
         <div className="max-w-6xl mx-auto space-y-16">
           {/* Section Header */}
           <div className="text-center space-y-4 animate-on-scroll">
-            <Typography variant="code" className="text-green-400">
-              $ gobuster dir -u target.com -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt
+            <Typography variant="code" className="text-purple-400">
+              $ npm run contact --message="Let's build something amazing"
             </Typography>
             <Typography variant="h2" className="font-mono text-white">
               Get In Touch
             </Typography>
-            <Separator variant="hacker" className="w-24 mx-auto" />
+            <Separator variant="cosmic" className="w-24 mx-auto" />
             
             <Typography variant="p" className="text-gray-400 max-w-2xl mx-auto">
-              Ready to secure your systems? Let&apos;s discuss your cybersecurity needs.
-              I&apos;m available for penetration testing, security consulting, and vulnerability assessments.
+              Ready to bring your ideas to life? Let&apos;s discuss your next project.
+              I&apos;m available for web development, full-stack consulting, and technical collaboration.
             </Typography>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Contact Form */}
             <div className="animate-on-scroll">
-              <ContactForm variant="hacker" />
+              <ContactForm variant="cosmic" />
             </div>
 
             {/* Contact Information */}
             <div className="space-y-6">
               {/* Contact Details */}
-              <Card variant="matrix" className="p-6 animate-on-scroll">
-                <Typography variant="h3" className="font-mono text-cyan-400 mb-6">
+              <Card variant="cosmic" className="p-6 animate-on-scroll">
+                <Typography variant="h3" className="font-mono text-pink-400 mb-6">
                   {"// Contact Information"}
                 </Typography>
                 
@@ -81,17 +81,17 @@ export function Contact() {
                     <div key={info.label} className="flex items-start space-x-3">
                       <Icon
                         icon={info.icon}
-                        variant="matrix"
+                        variant="cosmic"
                         className="h-5 w-5 mt-0.5"
                       />
                       <div>
-                        <Typography variant="small" className="text-cyan-400 font-mono">
+                        <Typography variant="small" className="text-pink-400 font-mono">
                           {info.label}:
                         </Typography>
                         {info.link ? (
                           <a
                             href={info.link}
-                            className="text-gray-300 hover:text-cyan-400 transition-colors font-mono"
+                            className="text-gray-300 hover:text-pink-400 transition-colors font-mono"
                             target="_blank"
                             rel="noopener noreferrer"
                           >
@@ -109,38 +109,17 @@ export function Contact() {
               </Card>
 
               {/* Social Links */}
-              <Card variant="hacker" className="p-6 animate-on-scroll">
-                <Typography variant="h4" className="font-mono text-green-400 mb-4">
+              <Card variant="cosmic" className="p-6 animate-on-scroll">
+                <Typography variant="h4" className="font-mono text-purple-400 mb-4">
                   Follow Me
                 </Typography>
                 
-                <SocialLinks variant="hacker" />
+                <SocialLinks variant="cosmic" />
                 
                 <Typography variant="small" className="text-gray-400 mt-4">
-                  Connect with me on social media for the latest security insights and updates.
+                  Connect with me on social media for the latest insights and updates.
                 </Typography>
               </Card>
-
-              {/* Security Notice */}
-              <Card variant="hacker" className="p-6 animate-on-scroll border-yellow-500/50 bg-yellow-500/5">
-                <Typography variant="h4" className="font-mono text-yellow-400 mb-3">
-                  ⚠️ Security Notice
-                </Typography>
-                
-                <Typography variant="small" className="text-yellow-300">
-                  For sensitive communications, please use my PGP key. All penetration testing
-                  activities are conducted with proper authorization and within legal boundaries.
-                </Typography>
-              </Card>
-            </div>
-          </div>
-
-          {/* Terminal Footer */}
-          <div className="mt-16 animate-on-scroll">
-            <div className="bg-black border border-green-500/30 rounded-lg p-6 font-mono text-sm">
-              <div className="text-green-400 mb-2">$ echo &quot;Thank you for visiting my portfolio!&quot;</div>
-              <div className="text-gray-300">Thank you for visiting my portfolio!</div>
-              <div className="text-green-400 mt-2">$ _</div>
             </div>
           </div>
         </div>

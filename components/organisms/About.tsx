@@ -47,21 +47,21 @@ export function About() {
         <div className="max-w-6xl mx-auto space-y-16">
           {/* Section Header */}
           <div className="text-center space-y-4 animate-on-scroll">
-            <Typography variant="code" className="text-green-400">
+            <Typography variant="code" className="text-purple-400">
               $ cat about.txt
             </Typography>
             <Typography variant="h2" className="font-mono text-white">
               About Me
             </Typography>
-            <Separator variant="hacker" className="w-24 mx-auto" />
+            <Separator variant="cosmic" className="w-24 mx-auto" />
           </div>
 
           {/* Main Content */}
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             {/* Bio */}
             <div className="space-y-6 animate-on-scroll">
-              <Card variant="hacker" className="p-8">
-                <Typography variant="h3" className="font-mono text-green-400 mb-6">
+              <Card variant="cosmic" className="p-8">
+                <Typography variant="h3" className="font-mono text-purple-400 mb-6">
                   {"// Background"}
                 </Typography>
                 
@@ -89,14 +89,14 @@ export function About() {
               </Card>
 
               {/* Certifications */}
-              <Card variant="matrix" className="p-6 animate-on-scroll">
-                <Typography variant="h4" className="font-mono text-cyan-400 mb-4">
+              <Card variant="nebula" className="p-6 animate-on-scroll">
+                <Typography variant="h4" className="font-mono text-pink-400 mb-4">
                   Certifications
                 </Typography>
                 
                 <div className="flex flex-wrap gap-2">
                   {certifications.map((cert) => (
-                    <Badge key={cert} variant="matrix" className="font-mono">
+                    <Badge key={cert} variant="nebula" className="font-mono">
                       {cert}
                     </Badge>
                   ))}
@@ -113,7 +113,7 @@ export function About() {
                   className="p-6 animate-on-scroll hover:scale-105 transition-transform duration-300"
                 >
                   <div className="flex items-start space-x-4">
-                    <div className="p-3 bg-green-500/10 border border-green-500/30 rounded-lg">
+                    <div className="p-3 bg-purple-500/10 border border-purple-500/30 rounded-lg">
                       <Icon
                         icon={achievement.icon}
                         variant="hacker"

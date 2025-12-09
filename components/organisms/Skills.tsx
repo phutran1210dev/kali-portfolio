@@ -47,13 +47,13 @@ export function Skills() {
         <div className="max-w-7xl mx-auto space-y-16">
           {/* Section Header */}
           <div className="text-center space-y-4">
-            <Typography variant="code" className="text-cyan-400">
+            <Typography variant="code" className="text-purple-400">
               $ ls -la skills/
             </Typography>
             <Typography variant="h2" className="font-mono text-white">
               Technical Arsenal
             </Typography>
-            <Separator variant="matrix" className="w-24 mx-auto" />
+            <Separator variant="cosmic" className="w-24 mx-auto" />
           </div>
 
           {/* Tab Navigation */}
@@ -62,12 +62,12 @@ export function Skills() {
               {tabs.map((tab) => (
                 <Button
                   key={tab.key}
-                  variant={activeTab === tab.key ? "hacker" : "outline"}
+                  variant={activeTab === tab.key ? "cosmic" : "outline"}
                   size="sm"
                   onClick={() => setActiveTab(tab.key)}
                   className={`font-mono transition-all duration-300 ${
                     activeTab === tab.key 
-                      ? 'bg-green-500/20 border-green-500/50 text-green-300' 
+                      ? 'bg-purple-500/20 border-purple-500/50 text-purple-300' 
                       : 'hover:bg-gray-800/50 text-gray-400 hover:text-gray-300'
                   }`}
                 >
@@ -98,22 +98,22 @@ export function Skills() {
 
           {/* Terminal Stats */}
           <div className="mt-16">
-            <div className="bg-black border border-green-500/30 rounded-lg p-6 font-mono text-sm">
-              <div className="text-green-400 mb-4">$ whois phutran1210.dev && dig +short phutran1210.dev</div>
+            <div className="bg-black border border-purple-500/30 rounded-lg p-6 font-mono text-sm">
+              <div className="text-purple-400 mb-4">$ whois phutran1210.dev && dig +short phutran1210.dev</div>
               <div className="space-y-2 text-gray-300">
                 {activeTab === "frontend" && (
                   <>
                     <div className="flex justify-between">
                       <span>React Projects:</span>
-                      <span className="text-green-400">25+</span>
+                      <span className="text-purple-400">25+</span>
                     </div>
                     <div className="flex justify-between">
-                      <span>Years Experience:</span>
-                      <span className="text-green-400">5+</span>
+                      <span>$ years_experience:</span>
+                      <span className="text-purple-400">5+</span>
                     </div>
                     <div className="flex justify-between">
-                      <span>UI Components Built:</span>
-                      <span className="text-green-400">200+</span>
+                      <span>$ completed_projects:</span>
+                      <span className="text-purple-400">200+</span>
                     </div>
                   </>
                 )}
@@ -121,31 +121,31 @@ export function Skills() {
                   <>
                     <div className="flex justify-between">
                       <span>$ sqlmap -u &quot;target.com&quot; --dbs:</span>
-                      <span className="text-green-400">50+ APIs</span>
+                      <span className="text-purple-400">50+ APIs</span>
                     </div>
                     <div className="flex justify-between">
                       <span>$ enum4linux -a target.com:</span>
-                      <span className="text-green-400">30+ DBs</span>
+                      <span className="text-purple-400">30+ DBs</span>
                     </div>
                     <div className="flex justify-between">
                       <span>$ nmap -sS -O target.com:</span>
-                      <span className="text-green-400">40+ Servers</span>
+                      <span className="text-purple-400">40+ Servers</span>
                     </div>
                   </>
                 )}
-                {activeTab === "ceh" && (
+                {activeTab === "lab" && (
                   <>
                     <div className="flex justify-between">
                       <span>$ nikto -h target.com -output vulns.txt:</span>
-                      <span className="text-green-400">150+ Vulns</span>
+                      <span className="text-purple-400">150+ Vulns</span>
                     </div>
                     <div className="flex justify-between">
                       <span>$ msfconsole -q -x &quot;use exploit/multi&quot;:</span>
-                      <span className="text-green-400">75+ Tests</span>
+                      <span className="text-purple-400">75+ Tests</span>
                     </div>
                     <div className="flex justify-between">
                       <span>$ burpsuite --target=&quot;*.target.com&quot;:</span>
-                      <span className="text-green-400">25+ Audits</span>
+                      <span className="text-purple-400">25+ Audits</span>
                     </div>
                   </>
                 )}

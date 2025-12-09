@@ -131,21 +131,21 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #00ff41;
+  background: #a855f7;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #00cc33;
+  background: #9333ea;
 }
 
-/* Cyberpunk glow effects */
-.glow-green {
-  box-shadow: 0 0 20px rgba(0, 255, 65, 0.3);
+/* Cosmic glow effects */
+.glow-purple {
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.4);
 }
 
-.glow-cyan {
-  box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+.glow-pink {
+  box-shadow: 0 0 20px rgba(236, 72, 153, 0.4);
 }
 
 /* Matrix rain animation */
@@ -209,10 +209,15 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Selection color */
+/* Selection color - Cosmic theme */
 ::selection {
-  background-color: rgba(0, 255, 65, 0.3);
+  background-color: rgba(168, 85, 247, 0.3);
   color: #fff;
+}
+
+/* Cosmic radial gradient utility */
+.bg-radial-gradient {
+  background: radial-gradient(circle at center, var(--tw-gradient-stops));
 }
 
 /* Custom animations */
@@ -229,4 +234,18 @@ html {
 
 .animate-fadeInUp {
   animation: fadeInUp 0.6s ease-out;
+}
+
+/* Cosmic glow animation */
+@keyframes cosmicGlow {
+  0%, 100% {
+    text-shadow: 0 0 20px rgba(168, 85, 247, 0.5),
+                 0 0 40px rgba(168, 85, 247, 0.3),
+                 0 0 60px rgba(168, 85, 247, 0.2);
+  }
+  50% {
+    text-shadow: 0 0 30px rgba(236, 72, 153, 0.6),
+                 0 0 50px rgba(236, 72, 153, 0.4),
+                 0 0 70px rgba(236, 72, 153, 0.3);
+  }
 }

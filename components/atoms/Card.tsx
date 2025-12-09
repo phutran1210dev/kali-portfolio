@@ -4,15 +4,15 @@ import { cn } from "@/lib/utils";
 import { HTMLAttributes, forwardRef } from "react";
 
 interface CardProps extends HTMLAttributes<HTMLDivElement> {
-  variant?: "default" | "hacker" | "matrix" | "glass";
+  variant?: "default" | "cosmic" | "nebula" | "glass";
 }
 
 const Card = forwardRef<HTMLDivElement, CardProps>(
   ({ className, variant = "default", ...props }, ref) => {
     const variantClasses = {
       default: "bg-card text-card-foreground border",
-      hacker: "bg-black/90 border border-green-500/50 text-green-100 shadow-lg shadow-green-500/10 backdrop-blur-sm",
-      matrix: "bg-gray-900/90 border border-cyan-400/50 text-cyan-100 shadow-lg shadow-cyan-400/10 backdrop-blur-sm",
+      cosmic: "bg-gradient-to-br from-purple-950/90 via-black/90 to-blue-950/90 border border-purple-500/50 text-purple-100 shadow-lg shadow-purple-500/20 backdrop-blur-sm",
+      nebula: "bg-gradient-to-br from-pink-950/80 via-purple-950/80 to-blue-950/80 border border-pink-400/50 text-pink-100 shadow-lg shadow-pink-400/20 backdrop-blur-sm",
       glass: "bg-white/10 dark:bg-black/10 border border-white/20 dark:border-white/10 backdrop-blur-md",
     };
 

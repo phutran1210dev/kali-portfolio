@@ -12,7 +12,7 @@ interface SocialLink {
 }
 
 interface SocialLinksProps {
-  variant?: "default" | "hacker" | "matrix";
+  variant?: "default" | "cosmic" | "nebula";
   orientation?: "horizontal" | "vertical";
   size?: "sm" | "md" | "lg";
   className?: string;
@@ -42,7 +42,7 @@ const socialLinks: SocialLink[] = [
 ];
 
 export function SocialLinks({
-  variant = "hacker",
+  variant = "cosmic",
   orientation = "horizontal",
   size = "md",
   className,
@@ -82,11 +82,11 @@ export function SocialLinks({
               variant={variant === "default" ? "default" : variant}
               className="h-4 w-4 transition-transform duration-300 group-hover:scale-110"
             />
-            {variant === "hacker" && (
-              <span className="absolute inset-0 bg-green-400/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            {variant === "cosmic" && (
+              <span className="absolute inset-0 bg-purple-400/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             )}
-            {variant === "matrix" && (
-              <span className="absolute inset-0 bg-cyan-400/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            {variant === "nebula" && (
+              <span className="absolute inset-0 bg-pink-400/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             )}
           </Button>
         </a>

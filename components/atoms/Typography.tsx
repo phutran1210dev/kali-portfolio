@@ -56,9 +56,9 @@ function getVariantClasses(variant: TypographyProps["variant"]) {
     case "p":
       return "leading-7 [&:not(:first-child)]:mt-6 text-foreground";
     case "blockquote":
-      return "mt-6 border-l-2 border-green-500 pl-6 italic text-muted-foreground font-mono";
+      return "mt-6 border-l-2 border-purple-500 pl-6 italic text-muted-foreground font-mono";
     case "code":
-      return "relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm font-semibold text-green-400 border border-green-500/20";
+      return "relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm font-semibold text-purple-400 border border-purple-500/20";
     case "lead":
       return "text-xl text-muted-foreground";
     case "large":

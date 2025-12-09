@@ -5,15 +5,15 @@ import { HTMLAttributes, forwardRef } from "react";
 
 interface SeparatorProps extends HTMLAttributes<HTMLDivElement> {
   orientation?: "horizontal" | "vertical";
-  variant?: "default" | "hacker" | "matrix";
+  variant?: "default" | "cosmic" | "nebula";
 }
 
 const Separator = forwardRef<HTMLDivElement, SeparatorProps>(
   ({ className, orientation = "horizontal", variant = "default", ...props }, ref) => {
     const variantClasses = {
       default: "bg-border",
-      hacker: "bg-gradient-to-r from-transparent via-green-500 to-transparent",
-      matrix: "bg-gradient-to-r from-transparent via-cyan-400 to-transparent",
+      cosmic: "bg-gradient-to-r from-transparent via-purple-500 to-transparent",
+      nebula: "bg-gradient-to-r from-transparent via-pink-400 to-transparent",
     };
 
     return (

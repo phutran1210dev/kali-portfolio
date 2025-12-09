@@ -16,8 +16,8 @@ const badgeVariants = cva(
         destructive:
           "border-transparent bg-destructive text-destructive-foreground hover:bg-destructive/80",
         outline: "text-foreground",
-        hacker: "border-green-500/50 bg-green-500/10 text-green-400 font-mono hover:bg-green-500/20",
-        matrix: "border-cyan-400/50 bg-cyan-400/10 text-cyan-400 font-mono hover:bg-cyan-400/20",
+        cosmic: "border-purple-500/50 bg-purple-500/10 text-purple-300 font-mono hover:bg-purple-500/20 hover:shadow-lg hover:shadow-purple-500/20",
+        nebula: "border-pink-400/50 bg-gradient-to-r from-pink-500/10 to-purple-500/10 text-pink-300 font-mono hover:from-pink-500/20 hover:to-purple-500/20 hover:shadow-lg hover:shadow-pink-500/20",
         skill: "border-blue-500/50 bg-blue-500/10 text-blue-400 hover:bg-blue-500/20",
       },
     },

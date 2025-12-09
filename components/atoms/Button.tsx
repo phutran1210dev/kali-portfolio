@@ -15,8 +15,8 @@ const buttonVariants = cva(
         secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
-        hacker: "bg-black border border-green-500 text-green-400 hover:bg-green-500/10 hover:shadow-lg hover:shadow-green-500/25 font-mono",
-        matrix: "bg-gradient-to-r from-black via-gray-900 to-black border border-cyan-400 text-cyan-300 hover:border-cyan-300 hover:shadow-cyan-400/50 hover:shadow-lg font-mono",
+        cosmic: "bg-black border border-purple-500 text-purple-300 hover:bg-purple-500/10 hover:shadow-lg hover:shadow-purple-500/30 font-mono backdrop-blur-sm",
+        nebula: "bg-gradient-to-r from-pink-900/30 via-purple-900/30 to-blue-900/30 border border-pink-400 text-pink-200 hover:border-pink-300 hover:shadow-pink-400/50 hover:shadow-lg font-mono backdrop-blur-sm",
       },
       size: {
         default: "h-10 px-4 py-2",
@@ -44,11 +44,11 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         ref={ref}
         {...props}
       >
-        {variant === "hacker" && (
-          <span className="absolute inset-0 bg-gradient-to-r from-transparent via-green-500/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
+        {variant === "cosmic" && (
+          <span className="absolute inset-0 bg-gradient-to-r from-transparent via-purple-500/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
         )}
-        {variant === "matrix" && (
-          <span className="absolute inset-0 bg-gradient-to-r from-transparent via-cyan-400/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
+        {variant === "nebula" && (
+          <span className="absolute inset-0 bg-gradient-to-r from-transparent via-pink-400/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
         )}
         {props.children}
       </button>

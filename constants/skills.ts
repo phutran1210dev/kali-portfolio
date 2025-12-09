@@ -18,7 +18,7 @@ export interface SkillCategory {
 }
 
 export interface SkillTab {
-  key: "frontend" | "backend" | "ceh" | "devops";
+  key: "frontend" | "backend" | "lab" | "devops";
   label: string;
   color: string;
 }
@@ -26,7 +26,7 @@ export interface SkillTab {
 export interface SkillTabs {
   frontend: SkillCategory[];
   backend: SkillCategory[];
-  ceh: SkillCategory[];
+  lab: SkillCategory[];
   devops: SkillCategory[];
 }
 
@@ -65,7 +65,7 @@ export const skillTabs: SkillTabs = {
       skills: ["Drizzle ORM", "Prisma", "Supabase", "PostgreSQL", "Redis", "GraphQL"],
     },
   ],
-  ceh: [
+  lab: [
     {
       title: "Web Security",
       description: "Modern web application security testing",
@@ -98,8 +98,8 @@ export const skillTabs: SkillTabs = {
 export const tabs: SkillTab[] = [
   { key: "frontend", label: "Frontend", color: "text-blue-400" },
   { key: "backend", label: "Backend", color: "text-yellow-400" },
-  { key: "ceh", label: "CEH", color: "text-green-400" },
-  { key: "devops", label: "DevOps", color: "text-purple-400" },
+  { key: "lab", label: "Space Tech", color: "text-purple-400" },
+  { key: "devops", label: "DevOps", color: "text-pink-400" },
 ];
 
 export type SkillTabKey = keyof SkillTabs;

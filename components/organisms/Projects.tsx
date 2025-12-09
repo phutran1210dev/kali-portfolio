@@ -19,7 +19,7 @@ export function Projects() {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             const cards = entry.target.querySelectorAll(".project-card");
-            
+
             animateElement(cards, {
               ...animations.fadeInUp,
               delay: (el, i) => i * 150,
@@ -47,17 +47,18 @@ export function Projects() {
         <div className="max-w-7xl mx-auto space-y-16">
           {/* Section Header */}
           <div className="text-center space-y-4">
-            <Typography variant="code" className="text-green-400">
-              $ find ./projects -type f -name &quot;*.md&quot; | head -10
+            <Typography variant="code" className="text-purple-400">
+              $ ls ./projects --color=auto | grep -i featured
             </Typography>
             <Typography variant="h2" className="font-mono text-white">
               Featured Projects
             </Typography>
-            <Separator variant="hacker" className="w-24 mx-auto" />
-            
+            <Separator variant="cosmic" className="w-24 mx-auto" />
+
             <Typography variant="p" className="text-gray-400 max-w-3xl mx-auto">
               A collection of frontend applications and full-stack projects
-              showcasing modern web development practices and user-centered design.
+              showcasing modern web development practices and user-centered
+              design.
             </Typography>
           </div>
 
@@ -70,8 +71,8 @@ export function Projects() {
                 onClick={() => setActiveTab(tab)}
                 className={`font-mono transition-all duration-300 ${
                   activeTab === tab
-                    ? "bg-green-500/20 border-green-500 text-green-400 shadow-lg shadow-green-500/20"
-                    : "border-gray-700 text-gray-400 hover:border-green-500/50 hover:text-green-300"
+                    ? "bg-purple-500/20 border-purple-500 text-purple-300 shadow-lg shadow-purple-500/30"
+                    : "border-gray-700 text-gray-400 hover:border-purple-500/50 hover:text-purple-300"
                 }`}
               >
                 {tab}
@@ -85,26 +86,11 @@ export function Projects() {
               <div key={project.title} className="project-card flex">
                 <ProjectCard
                   {...project}
-                  variant={index % 3 === 0 ? "hacker" : index % 3 === 1 ? "matrix" : "hacker"}
+                  variant={index % 2 === 0 ? "cosmic" : "nebula"}
                   className="w-full"
-                  isCEHProject={activeTab === "CEH"}
                 />
               </div>
             ))}
-          </div>
-
-          {/* Terminal Output */}
-          <div className="mt-16">
-            <div className="bg-black border border-green-500/30 rounded-lg p-6 font-mono text-sm">
-              <div className="text-green-400 mb-4">$ nmap -sV --script vuln target.com | grep -E &quot;VULNERABLE|CVE&quot;</div>
-              <div className="space-y-1 text-gray-300 text-sm">
-                <div>* <span className="text-red-400">CVE-2023-4911</span> CRITICAL: Buffer overflow in glibc</div>
-                <div>* <span className="text-yellow-400">CVE-2023-22515</span> HIGH: Authentication bypass in Confluence</div>
-                <div>* <span className="text-orange-400">CVE-2023-36884</span> MEDIUM: RCE via crafted document files</div>
-                <div>* <span className="text-blue-400">CVE-2023-38545</span> INFO: SOCKS5 heap buffer overflow</div>
-                <div>* <span className="text-green-400">OWASP-A01</span> Injection vulnerabilities detected</div>
-              </div>
-            </div>
           </div>
         </div>
       </Container>

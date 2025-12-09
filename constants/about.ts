@@ -10,28 +10,28 @@ export interface Achievement {
 export const achievements: Achievement[] = [
   {
     icon: Shield,
-    title: "Certified Ethical Hacker (CEH)",
-    description: "EC-Council certified with expertise in ethical hacking methodologies",
+    title: "Full-Stack Development",
+    description: "Building scalable applications with modern frameworks and best practices",
   },
   {
     icon: Target,
-    title: "Penetration Testing",
-    description: "Advanced penetration testing across web, mobile, and network infrastructures",
+    title: "UI/UX Excellence",
+    description: "Creating intuitive and beautiful user interfaces that users love",
   },
   {
     icon: Search,
-    title: "Vulnerability Research",
-    description: "Discovered and responsibly disclosed 50+ security vulnerabilities",
+    title: "Problem Solver",
+    description: "Delivering innovative solutions to complex technical challenges",
   },
   {
     icon: Award,
-    title: "Bug Bounty Hunter",
-    description: "Top performer on multiple bug bounty platforms with $50k+ earnings",
+    title: "Continuous Learner",
+    description: "Always exploring new technologies and industry best practices",
   },
 ];
 
-export const cehCertifications: string[] = [
-  "CEH v13 (Certified Ethical Hacker v13)",
+export const labExperience: string[] = [
+  "Space Tech & Modern Web Development",
 ];
 
 export const cloudCertifications: string[] = [
@@ -48,7 +48,7 @@ export const languageSkills: string[] = [
 
 // Legacy export for backward compatibility
 export const certifications: string[] = [
-  ...cehCertifications,
+  ...labExperience,
   ...cloudCertifications,
   ...securityCertifications,
   ...languageSkills,

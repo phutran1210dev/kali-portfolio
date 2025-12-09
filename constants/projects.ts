@@ -13,7 +13,7 @@ export interface Project {
 export interface ProjectTabs {
   Frontend: Project[];
   Backend: Project[];
-  CEH: Project[];
+  Lab: Project[];
   Other: Project[];
 }
 
@@ -21,7 +21,7 @@ export const projectTabs: ProjectTabs = {
   Frontend: [
     {
       title: "Portfolio Website",
-      description: "Modern portfolio website with atomic design pattern, CEH terminal animations, and responsive layout for showcasing projects and skills.",
+      description: "Modern portfolio website with atomic design pattern, Lab terminal animations, and responsive layout for showcasing projects and skills.",
       image: "/projects/placeholder.svg",
       technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Anime.js", "React"],
       githubUrl: "https://github.com/phutran1210dev/kali-portfolio",
@@ -153,7 +153,7 @@ export const projectTabs: ProjectTabs = {
       progress: 0,
     }
   ],
-  CEH: [
+  Lab: [
     {
       title: "CTF Platform",
       description: "Full-featured Capture The Flag platform with dynamic challenges, real-time scoring, team management, and automated challenge deployment.",

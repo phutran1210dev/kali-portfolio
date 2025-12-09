@@ -5,14 +5,14 @@ import { cn } from "@/lib/utils";
 
 interface IconProps extends Omit<LucideProps, "ref"> {
   icon: LucideIcon;
-  variant?: "default" | "hacker" | "matrix";
+  variant?: "default" | "cosmic" | "nebula";
 }
 
 export function Icon({ icon: IconComponent, className, variant = "default", ...props }: IconProps) {
   const variantClasses = {
     default: "",
-    hacker: "text-green-400 drop-shadow-sm drop-shadow-green-400/50",
-    matrix: "text-cyan-400 drop-shadow-sm drop-shadow-cyan-400/50",
+    cosmic: "text-purple-400 drop-shadow-sm drop-shadow-purple-400/50",
+    nebula: "text-pink-400 drop-shadow-sm drop-shadow-pink-400/50",
   };
 
   return (

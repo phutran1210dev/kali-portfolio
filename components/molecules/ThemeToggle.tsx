@@ -41,14 +41,14 @@ export function ThemeToggle() {
 
   return (
     <Button
-      variant="hacker"
+      variant="cosmic"
       size="icon"
       onClick={cycleTheme}
       className="relative overflow-hidden group"
     >
       <Icon 
         icon={getIcon()} 
-        variant="hacker"
+        variant="cosmic"
         className="h-4 w-4 transition-transform duration-300 group-hover:rotate-180" 
       />
       <span className="sr-only">

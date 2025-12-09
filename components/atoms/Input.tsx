@@ -4,14 +4,14 @@ import { cn } from "@/lib/utils";
 import { InputHTMLAttributes, forwardRef } from "react";
 
 export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
-  variant?: "default" | "hacker";
+  variant?: "default" | "cosmic";
 }
 
 const Input = forwardRef<HTMLInputElement, InputProps>(
   ({ className, type, variant = "default", ...props }, ref) => {
     const variantClasses = {
       default: "border-input bg-background",
-      hacker: "border-green-500/50 bg-black/50 text-green-400 placeholder:text-green-400/50 focus:border-green-400 focus:ring-green-400/20",
+      cosmic: "border-purple-500/50 bg-black/50 text-purple-400 placeholder:text-purple-400/50 focus:border-purple-400 focus:ring-purple-400/20",
     };
 
     return (

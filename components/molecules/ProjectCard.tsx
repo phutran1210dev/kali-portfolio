@@ -19,10 +19,8 @@ interface ProjectCardProps {
   liveUrl?: string;
   productionUrl?: string;
   progress?: number;
-  variant?: "default" | "hacker" | "matrix";
+  variant?: "default" | "cosmic" | "nebula";
   className?: string;
-  securityRestricted?: boolean;
-  isCEHProject?: boolean;
 }
 
 export function ProjectCard({
@@ -33,10 +31,8 @@ export function ProjectCard({
   liveUrl,
   productionUrl,
   progress = 100,
-  variant = "hacker",
+  variant = "cosmic",
   className,
-  securityRestricted = false,
-  isCEHProject = false,
 }: ProjectCardProps) {
   const maxVisibleTechs = 4;
   const visibleTechs = technologies.slice(0, maxVisibleTechs);
@@ -45,7 +41,7 @@ export function ProjectCard({
   const headerRef = useRef<HTMLDivElement>(null);
   const [showTooltip, setShowTooltip] = useState(false);
 
-  // CEH Kali Linux terminal animation
+  // Space console terminal animation
   useEffect(() => {
     if (headerRef.current) {
       const dots = headerRef.current.querySelectorAll('.terminal-dot');
@@ -78,37 +74,37 @@ export function ProjectCard({
       variant={variant}
       className={cn(
         "group hover:scale-[1.02] transition-all duration-300 overflow-hidden h-full flex flex-col",
-        variant === "hacker" && "hover:shadow-lg hover:shadow-green-500/20",
-        variant === "matrix" && "hover:shadow-lg hover:shadow-cyan-400/20",
+        variant === "cosmic" && "hover:shadow-lg hover:shadow-purple-500/30",
+        variant === "nebula" && "hover:shadow-lg hover:shadow-pink-400/30",
         className
       )}
     >
-      {/* CEH Kali Linux Terminal Header */}
+      {/* Space Console Terminal Header */}
       <div 
         ref={headerRef}
         className={cn(
           "relative h-48 w-full overflow-hidden rounded-t-lg border-b",
-          variant === "hacker" && "bg-linear-to-br from-gray-900 via-green-950/20 to-gray-800 border-green-400/50",
-          variant === "matrix" && "bg-linear-to-br from-gray-900 via-cyan-950/20 to-gray-800 border-cyan-400/50"
+          variant === "cosmic" && "bg-gradient-to-br from-purple-950/40 via-blue-950/20 to-black border-purple-400/50",
+          variant === "nebula" && "bg-gradient-to-br from-pink-950/40 via-purple-950/20 to-black border-pink-400/50"
         )}
       >
         {/* Terminal Window Header */}
         <div className={cn(
           "flex items-center justify-between p-3 border-b",
-          variant === "hacker" && "bg-green-950/30 border-green-500/30",
-          variant === "matrix" && "bg-cyan-950/30 border-cyan-500/30"
+          variant === "cosmic" && "bg-purple-950/30 border-purple-500/30",
+          variant === "nebula" && "bg-pink-950/30 border-pink-500/30"
         )}>
           <div className="flex items-center space-x-2">
-            <div className="terminal-dot w-3 h-3 rounded-full bg-red-400 shadow-lg shadow-red-500/50"></div>
-            <div className="terminal-dot w-3 h-3 rounded-full bg-yellow-400 shadow-lg shadow-yellow-500/50"></div>
-            <div className="terminal-dot w-3 h-3 rounded-full bg-green-400 shadow-lg shadow-green-500/50"></div>
+            <div className="terminal-dot w-3 h-3 rounded-full bg-pink-400 shadow-lg shadow-pink-500/50"></div>
+            <div className="terminal-dot w-3 h-3 rounded-full bg-purple-400 shadow-lg shadow-purple-500/50"></div>
+            <div className="terminal-dot w-3 h-3 rounded-full bg-blue-400 shadow-lg shadow-blue-500/50"></div>
           </div>
           <div className={cn(
             "text-xs font-mono font-semibold",
-            variant === "hacker" && "text-green-300",
-            variant === "matrix" && "text-cyan-300"
+            variant === "cosmic" && "text-purple-300",
+            variant === "nebula" && "text-pink-300"
           )}>
-            root@kali:~/projects
+            space@nebula:~/projects
           </div>
         </div>
 
@@ -116,79 +112,64 @@ export function ProjectCard({
         <div className="p-4 space-y-2 font-mono text-xs">
           <div className={cn(
             "terminal-line flex items-center font-semibold",
-            variant === "hacker" && "text-green-300",
-            variant === "matrix" && "text-cyan-300"
+            variant === "cosmic" && "text-purple-300",
+            variant === "nebula" && "text-pink-300"
           )}>
-            <span className="text-red-400">┌──(</span>
+            <span className="text-blue-400">╭─(</span>
             <span className={cn(
               "font-bold",
-              variant === "hacker" && "text-green-400",
-              variant === "matrix" && "text-cyan-400"
-            )}>root㉿kali</span>
-            <span className="text-red-400">)-[</span>
+              variant === "cosmic" && "text-purple-400",
+              variant === "nebula" && "text-pink-400"
+            )}>space㉿nebula</span>
+            <span className="text-blue-400">)-[</span>
             <span className="text-gray-200 font-semibold">~/projects</span>
-            <span className="text-red-400">]</span>
+            <span className="text-blue-400">]</span>
           </div>
           <div className={cn(
             "terminal-line flex items-center font-semibold",
-            variant === "hacker" && "text-green-300",
-            variant === "matrix" && "text-cyan-300"
+            variant === "cosmic" && "text-purple-300",
+            variant === "nebula" && "text-pink-300"
           )}>
-            <span className="text-red-400">└─</span>
+            <span className="text-blue-400">╰─</span>
             <span className={cn(
               "font-bold",
-              variant === "hacker" && "text-green-400",
-              variant === "matrix" && "text-cyan-400"
+              variant === "cosmic" && "text-purple-400",
+              variant === "nebula" && "text-pink-400"
             )}>$ </span>
             <span className="text-gray-200">cat project_info.txt</span>
           </div>
           <div className={cn(
             "terminal-line h-px",
-            variant === "hacker" && "bg-linear-to-r from-transparent via-green-400/70 to-transparent",
-            variant === "matrix" && "bg-linear-to-r from-transparent via-cyan-400/70 to-transparent"
+            variant === "cosmic" && "bg-linear-to-r from-transparent via-purple-400/70 to-transparent",
+            variant === "nebula" && "bg-linear-to-r from-transparent via-pink-400/70 to-transparent"
           )}></div>
           <div className={cn(
             "terminal-line font-bold text-sm",
-            variant === "hacker" && "text-green-300",
-            variant === "matrix" && "text-cyan-300"
+            variant === "cosmic" && "text-purple-300",
+            variant === "nebula" && "text-pink-300"
           )}># {title}</div>
           <div className={cn(
             "terminal-line h-px",
-            variant === "hacker" && "bg-linear-to-r from-transparent via-green-400/50 to-transparent",
-            variant === "matrix" && "bg-linear-to-r from-transparent via-cyan-400/50 to-transparent"
+            variant === "cosmic" && "bg-linear-to-r from-transparent via-purple-400/50 to-transparent",
+            variant === "nebula" && "bg-linear-to-r from-transparent via-pink-400/50 to-transparent"
           )}></div>
         </div>
 
-        {/* Matrix-style overlay */}
+        {/* Cosmic overlay */}
         <div className={cn(
           "absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300",
-          variant === "hacker" && "bg-green-500/5",
-          variant === "matrix" && "bg-cyan-400/5"
+          variant === "cosmic" && "bg-purple-500/10",
+          variant === "nebula" && "bg-pink-400/10"
         )} />
 
         {/* Scanning line effect */}
         <div className={cn(
           "absolute top-0 left-0 w-full h-px opacity-0 group-hover:opacity-100 transition-opacity duration-300",
           "bg-linear-to-r from-transparent via-current to-transparent animate-pulse",
-          variant === "hacker" && "text-green-500",
-          variant === "matrix" && "text-cyan-400"
+          variant === "cosmic" && "text-purple-500",
+          variant === "nebula" && "text-pink-400"
         )} />
       </div>
-      
-      {/* Security Warning Ribbon for CEH Projects */}
-      {isCEHProject && securityRestricted && (
-        <div className="relative overflow-hidden border-y border-red-500/50 bg-red-900/30 font-mono text-xs font-bold">
-          <div className="px-4 py-2 flex items-center justify-between">
-            <div className="flex items-center space-x-2">
-              <div className="w-2 h-2 rounded-full bg-red-400 animate-pulse" />
-              <span className="text-red-300">⚠️ SECURITY WARNING</span>
-            </div>
-          </div>
-          <div className="px-4 py-1 text-xs border-t bg-red-800/20 border-red-500/20 text-red-200">
-            🔒 Educational purposes only - DO NOT implement in practice
-          </div>
-        </div>
-      )}
       
       <div className="p-6 space-y-4 flex flex-col grow">
         <Typography variant="h3" className="font-mono group-hover:text-primary transition-colors">
@@ -204,24 +185,24 @@ export function ProjectCard({
           <div className="flex items-center justify-between text-xs font-mono">
             <span className={cn(
               "font-semibold",
-              variant === "hacker" && "text-green-400",
-              variant === "matrix" && "text-cyan-400",
+              variant === "cosmic" && "text-purple-400",
+              variant === "nebula" && "text-pink-400",
               variant === "default" && "text-primary"
             )}>Progress</span>
             <span className={cn(
               "font-bold",
-              progress === 100 && "text-green-400",
-              progress >= 80 && progress < 100 && "text-yellow-400",
-              progress < 80 && "text-red-400"
+              progress === 100 && "text-purple-400",
+              progress >= 80 && progress < 100 && "text-pink-400",
+              progress < 80 && "text-orange-400"
             )}>{progress}%</span>
           </div>
           <div className="w-full bg-gray-700/50 rounded-full h-2 overflow-hidden">
             <div 
               className={cn(
                 "h-full rounded-full transition-all duration-500 ease-out",
-                progress === 100 && "bg-linear-to-r from-green-500 to-green-400 shadow-lg shadow-green-500/30",
-                progress >= 80 && progress < 100 && "bg-linear-to-r from-yellow-500 to-yellow-400 shadow-lg shadow-yellow-500/30",
-                progress < 80 && "bg-linear-to-r from-red-500 to-red-400 shadow-lg shadow-red-500/30"
+                progress === 100 && "bg-linear-to-r from-purple-500 to-blue-400 shadow-lg shadow-purple-500/30",
+                progress >= 80 && progress < 100 && "bg-linear-to-r from-pink-500 to-purple-400 shadow-lg shadow-pink-500/30",
+                progress < 80 && "bg-linear-to-r from-orange-500 to-pink-400 shadow-lg shadow-orange-500/30"
               )}
               style={{ width: `${progress}%` }}
             />
@@ -244,8 +225,8 @@ export function ProjectCard({
                 variant={variant === "default" ? "skill" : variant}
                 className={cn(
                   "text-xs cursor-help transition-all duration-300",
-                  variant === "hacker" && "bg-green-500/20 text-green-300 border-green-500/30 hover:bg-green-500/30",
-                  variant === "matrix" && "bg-cyan-500/20 text-cyan-300 border-cyan-500/30 hover:bg-cyan-500/30"
+                  variant === "cosmic" && "bg-purple-500/20 text-purple-300 border-purple-500/30 hover:bg-purple-500/30",
+                  variant === "nebula" && "bg-pink-500/20 text-pink-300 border-pink-500/30 hover:bg-pink-500/30"
                 )}
                 onMouseEnter={() => setShowTooltip(true)}
                 onMouseLeave={() => setShowTooltip(false)}
@@ -260,8 +241,8 @@ export function ProjectCard({
                   "whitespace-nowrap px-3 py-2 rounded-lg shadow-lg",
                   "border animate-in fade-in-0 zoom-in-95 duration-200",
                   "text-sm font-mono",
-                  variant === "hacker" && "bg-gray-900 border-green-500/50 shadow-green-500/20 text-green-300",
-                  variant === "matrix" && "bg-gray-900 border-cyan-500/50 shadow-cyan-500/20 text-cyan-300",
+                  variant === "cosmic" && "bg-gray-900 border-purple-500/50 shadow-purple-500/20 text-purple-300",
+                  variant === "nebula" && "bg-gray-900 border-pink-500/50 shadow-pink-500/20 text-pink-300",
                   variant === "default" && "bg-gray-900 border-gray-600 shadow-gray-500/20 text-gray-300"
                 )}>
                   {remainingTechs.join(", ")}
@@ -270,8 +251,8 @@ export function ProjectCard({
                   <div className={cn(
                     "absolute top-full left-1/2 -translate-x-1/2",
                     "w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent",
-                    variant === "hacker" && "border-t-green-500/50",
-                    variant === "matrix" && "border-t-cyan-500/50",
+                    variant === "cosmic" && "border-t-purple-500/50",
+                    variant === "nebula" && "border-t-pink-500/50",
                     variant === "default" && "border-t-gray-600"
                   )} />
                 </div>
@@ -282,7 +263,7 @@ export function ProjectCard({
         
         <div className="flex flex-wrap gap-2 pt-2">
           {/* Code Button */}
-          {githubUrl && !securityRestricted ? (
+          {githubUrl ? (
             <a href={githubUrl} target="_blank" rel="noopener noreferrer">
               <Button
                 variant={variant === "default" ? "outline" : variant}
@@ -297,19 +278,16 @@ export function ProjectCard({
               variant="outline"
               size="sm"
               disabled
-              className={cn(
-                "opacity-50 cursor-not-allowed bg-gray-800/50 border-gray-600 text-gray-500",
-                securityRestricted && "border-red-600/50 text-red-500/50"
-              )}
-              title={securityRestricted ? "Source code restricted for security reasons" : "Source code not available"}
+              className="opacity-50 cursor-not-allowed bg-gray-800/50 border-gray-600 text-gray-500"
+              title="Source code not available"
             >
               <Icon icon={Github} className="h-4 w-4 mr-2" />
-              {securityRestricted ? "Private" : "Code"}
+              Code
             </Button>
           )}
           
           {/* Live Demo Button */}
-          {liveUrl && !securityRestricted ? (
+          {liveUrl ? (
             <a href={liveUrl} target="_blank" rel="noopener noreferrer">
               <Button
                 variant={variant === "default" ? "default" : variant}
@@ -324,27 +302,24 @@ export function ProjectCard({
               variant="outline"
               size="sm"
               disabled
-              className={cn(
-                "opacity-50 cursor-not-allowed bg-gray-800/50 border-gray-600 text-gray-500",
-                securityRestricted && "border-red-600/50 text-red-500/50"
-              )}
-              title={securityRestricted ? "Live demo restricted for security reasons" : "Live demo not available"}
+              className="opacity-50 cursor-not-allowed bg-gray-800/50 border-gray-600 text-gray-500"
+              title="Live demo not available"
             >
               <Icon icon={ExternalLink} className="h-4 w-4 mr-2" />
-              {securityRestricted ? "Restricted" : "Live Demo"}
+              Live Demo
             </Button>
           )}
           
           {/* Production Button */}
-          {productionUrl && !securityRestricted ? (
+          {productionUrl ? (
             <a href={productionUrl} target="_blank" rel="noopener noreferrer">
               <Button
                 variant={variant === "default" ? "default" : variant}
                 size="sm"
                 className={cn(
                   "font-mono font-semibold",
-                  variant === "hacker" && "bg-green-500/30 border-green-400 text-green-300 hover:bg-green-500/40 shadow-lg shadow-green-500/20",
-                  variant === "matrix" && "bg-cyan-500/30 border-cyan-400 text-cyan-300 hover:bg-cyan-500/40 shadow-lg shadow-cyan-500/20"
+                  variant === "cosmic" && "bg-purple-500/30 border-purple-400 text-purple-300 hover:bg-purple-500/40 shadow-lg shadow-purple-500/30",
+                  variant === "nebula" && "bg-pink-500/30 border-pink-400 text-pink-300 hover:bg-pink-500/40 shadow-lg shadow-pink-500/30"
                 )}
               >
                 <Icon icon={ExternalLink} className="h-4 w-4 mr-2" />
@@ -356,14 +331,11 @@ export function ProjectCard({
               variant="outline"
               size="sm"
               disabled
-              className={cn(
-                "opacity-50 cursor-not-allowed bg-gray-800/50 border-gray-600 text-gray-500",
-                securityRestricted && "border-red-600/50 text-red-500/50"
-              )}
-              title={securityRestricted ? "Production access restricted for security reasons" : "Production not available"}
+              className="opacity-50 cursor-not-allowed bg-gray-800/50 border-gray-600 text-gray-500"
+              title="Production not available"
             >
               <Icon icon={ExternalLink} className="h-4 w-4 mr-2" />
-              {securityRestricted ? "Classified" : "Production"}
+              Production
             </Button>
           )}
         </div>

@@ -14,7 +14,7 @@ export function Footer() {
   };
 
   return (
-    <footer className="bg-black border-t border-green-500/30">
+    <footer className="bg-black border-t border-purple-500/30">
       <Container>
         <div className="py-12 space-y-8">
           {/* Main Footer Content */}
@@ -22,24 +22,23 @@ export function Footer() {
             {/* Brand */}
             <div className="space-y-4">
               <div className="flex items-center space-x-2">
-                <Icon icon={Terminal} variant="hacker" className="h-6 w-6" />
-                <Typography variant="h4" className="font-mono text-green-400">
-                  &gt; portfolio.exe
+                <Typography variant="h4" className="font-mono text-purple-400">
+                  Alex&apos;s Portfolio
                 </Typography>
               </div>
-              
+
               <Typography variant="small" className="text-gray-400 max-w-md">
-                Ethical Hacker & Cybersecurity Professional. Protecting digital assets
-                through responsible security research and penetration testing.
+                Full-Stack Developer & Digital Creator. Crafting exceptional web
+                experiences with modern technologies and cosmic creativity.
               </Typography>
             </div>
 
             {/* Quick Links */}
             <div className="space-y-4">
-              <Typography variant="h4" className="font-mono text-green-400">
+              <Typography variant="h4" className="font-mono text-purple-400">
                 Quick Links
               </Typography>
-              
+
               <nav className="space-y-2">
                 {[
                   { href: "#about", label: "About" },
@@ -50,7 +49,7 @@ export function Footer() {
                   <a
                     key={link.href}
                     href={link.href}
-                    className="block text-gray-400 hover:text-green-400 transition-colors font-mono text-sm"
+                    className="block text-gray-400 hover:text-purple-400 transition-colors font-mono text-sm"
                   >
                     {link.label}
                   </a>
@@ -60,19 +59,20 @@ export function Footer() {
 
             {/* Social & Contact */}
             <div className="space-y-4">
-              <Typography variant="h4" className="font-mono text-green-400">
+              <Typography variant="h4" className="font-mono text-purple-400">
                 Connect
               </Typography>
-              
-              <SocialLinks variant="hacker" size="sm" />
-              
+
+              <SocialLinks variant="cosmic" size="sm" />
+
               <Typography variant="small" className="text-gray-400">
-                Available for cybersecurity consulting and penetration testing services.
+                Available for web development consulting and full-stack project
+                collaboration.
               </Typography>
             </div>
           </div>
 
-          <Separator variant="hacker" />
+          <Separator variant="cosmic" />
 
           {/* Bottom Footer */}
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
@@ -80,9 +80,9 @@ export function Footer() {
               <Typography variant="small" className="text-gray-400">
                 © 2025 Phú Trần. All rights reserved.
               </Typography>
-              
-              <span className="text-green-500">|</span>
-              
+
+              <span className="text-purple-500">|</span>
+
               <Typography variant="small" className="text-gray-400">
                 Built with Next.js & Anime.js
               </Typography>
@@ -90,7 +90,7 @@ export function Footer() {
 
             {/* Back to Top */}
             <Button
-              variant="hacker"
+              variant="cosmic"
               size="sm"
               onClick={scrollToTop}
               className="group"
@@ -104,9 +104,10 @@ export function Footer() {
           </div>
 
           {/* Terminal Signature */}
-          <div className="bg-black border border-green-500/30 rounded-lg p-4 font-mono text-xs text-center">
-            <Typography variant="small" className="text-green-400">
-              $ echo &quot;Built with 💚 by a security professional who believes in making the internet safer&quot;
+          <div className="bg-black border border-purple-500/30 rounded-lg p-4 font-mono text-xs text-center">
+            <Typography variant="small" className="text-purple-400">
+              $ echo &quot;Built with 💜 by a developer who believes in creating
+              amazing digital experiences&quot;
             </Typography>
           </div>
         </div>

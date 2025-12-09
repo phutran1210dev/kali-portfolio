@@ -11,7 +11,7 @@ import { Footer } from "@/components/organisms/Footer";
 export function PortfolioTemplate() {
   return (
     <div className="min-h-screen bg-black text-white">
-      <Header variant="hacker" />
+      <Header variant="cosmic" />
       <main>
         <Hero />
         <About />

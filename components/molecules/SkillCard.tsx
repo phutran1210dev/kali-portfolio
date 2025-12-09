@@ -12,7 +12,7 @@ interface SkillCardProps {
   description?: string;
   icon: LucideIcon;
   skills: string[];
-  variant?: "default" | "hacker" | "matrix";
+  variant?: "default" | "cosmic" | "nebula";
   className?: string;
 }
 
@@ -21,7 +21,7 @@ export function SkillCard({
   description,
   icon,
   skills,
-  variant = "hacker",
+  variant = "cosmic",
   className,
 }: SkillCardProps) {
   return (
@@ -29,16 +29,16 @@ export function SkillCard({
       variant={variant}
       className={cn(
         "group hover:scale-105 transition-all duration-300 cursor-pointer",
-        variant === "hacker" && "hover:shadow-green-500/20",
-        variant === "matrix" && "hover:shadow-cyan-400/20",
+        variant === "cosmic" && "hover:shadow-purple-500/20",
+        variant === "nebula" && "hover:shadow-pink-400/20",
         className
       )}
     >
       <div className="flex items-start space-x-4">
         <div className={cn(
           "p-3 rounded-lg",
-          variant === "hacker" && "bg-green-500/10 border border-green-500/30",
-          variant === "matrix" && "bg-cyan-400/10 border border-cyan-400/30",
+          variant === "cosmic" && "bg-purple-500/10 border border-purple-500/30",
+          variant === "nebula" && "bg-pink-400/10 border border-pink-400/30",
           variant === "default" && "bg-muted"
         )}>
           <Icon

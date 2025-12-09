@@ -23,12 +23,6 @@ export const contactInfo: ContactInfo[] = [
   {
     icon: Calendar,
     label: "Availability",
-    value: "Available for consulting",
-  },
-  {
-    icon: Terminal,
-    label: "PGP Key",
-    value: "4096R/0x1234ABCD",
-    link: "/pgp-key.txt",
+    value: "Available for projects",
   },
 ];
