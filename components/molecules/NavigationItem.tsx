@@ -7,7 +7,7 @@ import { HTMLAttributes } from "react";
 interface NavigationItemProps extends HTMLAttributes<HTMLAnchorElement> {
   href: string;
   isActive?: boolean;
-  variant?: "default" | "cosmic";
+  variant?: "default" | "cosmic" | "hacker";
 }
 
 export function NavigationItem({
@@ -21,6 +21,7 @@ export function NavigationItem({
   const variantClasses = {
     default: "text-muted-foreground hover:text-foreground",
     cosmic: "text-purple-400/70 hover:text-purple-400 border-b border-transparent hover:border-purple-400/50",
+    hacker: "text-green-400/70 hover:text-green-400 border-b border-transparent hover:border-green-400/50",
   };
 
   return (

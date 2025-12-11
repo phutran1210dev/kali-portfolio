@@ -17,6 +17,7 @@ const buttonVariants = cva(
         link: "text-primary underline-offset-4 hover:underline",
         cosmic: "bg-black border border-purple-500 text-purple-300 hover:bg-purple-500/10 hover:shadow-lg hover:shadow-purple-500/30 font-mono backdrop-blur-sm",
         nebula: "bg-gradient-to-r from-pink-900/30 via-purple-900/30 to-blue-900/30 border border-pink-400 text-pink-200 hover:border-pink-300 hover:shadow-pink-400/50 hover:shadow-lg font-mono backdrop-blur-sm",
+        hacker: "bg-black border border-green-500 text-green-400 hover:bg-green-500/10 hover:shadow-lg hover:shadow-green-500/30 font-mono backdrop-blur-sm",
       },
       size: {
         default: "h-10 px-4 py-2",
@@ -45,10 +46,13 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         {...props}
       >
         {variant === "cosmic" && (
-          <span className="absolute inset-0 bg-gradient-to-r from-transparent via-purple-500/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
+          <span className="absolute inset-0 bg-gradient-to-r from-transparent via-purple-500/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
         )}
         {variant === "nebula" && (
-          <span className="absolute inset-0 bg-gradient-to-r from-transparent via-pink-400/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
+          <span className="absolute inset-0 bg-gradient-to-r from-transparent via-pink-400/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
+        )}
+        {variant === "hacker" && (
+          <span className="absolute inset-0 bg-gradient-to-r from-transparent via-green-500/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
         )}
         {props.children}
       </button>

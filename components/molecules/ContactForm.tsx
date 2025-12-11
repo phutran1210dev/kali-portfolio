@@ -13,7 +13,7 @@ import { useFormStatus } from "react-dom";
 import { submitContactForm } from "@/lib/actions/contact";
 
 interface ContactFormProps {
-  variant?: "default" | "cosmic" | "nebula";
+  variant?: "default" | "cosmic" | "nebula" | "hacker";
   className?: string;
 }
 
@@ -23,7 +23,7 @@ function SubmitButton({ variant }: { variant: ContactFormProps["variant"] }) {
   return (
     <Button
       type="submit"
-      variant={variant === "default" ? "default" : variant}
+      variant={variant}
       disabled={pending}
       className="w-full"
     >

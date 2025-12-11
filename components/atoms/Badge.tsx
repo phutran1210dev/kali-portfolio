@@ -19,6 +19,8 @@ const badgeVariants = cva(
         cosmic: "border-purple-500/50 bg-purple-500/10 text-purple-300 font-mono hover:bg-purple-500/20 hover:shadow-lg hover:shadow-purple-500/20",
         nebula: "border-pink-400/50 bg-gradient-to-r from-pink-500/10 to-purple-500/10 text-pink-300 font-mono hover:from-pink-500/20 hover:to-purple-500/20 hover:shadow-lg hover:shadow-pink-500/20",
         skill: "border-blue-500/50 bg-blue-500/10 text-blue-400 hover:bg-blue-500/20",
+        hacker: "border-green-500/50 bg-green-500/10 text-green-400 font-mono hover:bg-green-500/20 hover:shadow-lg hover:shadow-green-500/20",
+        matrix: "border-green-400/30 bg-green-400/5 text-green-300 font-mono hover:bg-green-400/10 hover:shadow-lg hover:shadow-green-400/10",
       },
     },
     defaultVariants: {

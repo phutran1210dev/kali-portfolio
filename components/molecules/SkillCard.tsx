@@ -12,7 +12,7 @@ interface SkillCardProps {
   description?: string;
   icon: LucideIcon;
   skills: string[];
-  variant?: "default" | "cosmic" | "nebula";
+  variant?: "default" | "cosmic" | "nebula" | "hacker" | "matrix";
   className?: string;
 }
 

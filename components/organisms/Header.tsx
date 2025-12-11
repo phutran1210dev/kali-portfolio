@@ -10,7 +10,7 @@ import { Menu, X, Terminal, Shield } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface HeaderProps {
-  variant?: "default" | "hacker";
+  variant?: "default" | "hacker" | "cosmic";
 }
 
 const navigationItems = [
